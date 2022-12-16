@@ -1,0 +1,12 @@
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/CMakeFiles/edit_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/CMakeFiles/rebuild_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/configured/CMakeFiles/edit_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/configured/CMakeFiles/rebuild_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/src/CMakeFiles/edit_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/src/CMakeFiles/rebuild_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/src/my_lib/CMakeFiles/Library.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/src/my_lib/CMakeFiles/edit_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/src/my_lib/CMakeFiles/rebuild_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/app/CMakeFiles/Executable.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/app/CMakeFiles/edit_cache.dir
+/home/gg/data/udemy_cmake/UdemyCmake_Template/2_CMake/5_ConfigureFile/app/CMakeFiles/rebuild_cache.dir
