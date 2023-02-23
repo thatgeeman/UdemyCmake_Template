@@ -1,32 +1,36 @@
-install:
+ifeq '$(findstring ;,$(PATH))' ';'
+  CONAN_FLAGS = -s compiler='Visual Studio' -s compiler.version=16 -s cppstd=17 --build missing
+else
+  CONAN_FLAGS = -s cppstd=17 --build missing
+endif
+
+all: prepare
+
+install_min:
+	sudo apt-get install gcc g++ cmake make doxygen
+
+install_tests: install_min
 	sudo apt-get install gcovr lcov
 
-install_doc:
-	pip install jinja2 Pygments
+install: install_min install_tests
+	sudo apt-get install git llvm pkg-config curl zip unzip tar python3-dev clang-format clang-tidy cppcheck iwyu
+
+install_pip:
+	pip install jinja2 Pygments cmake-format pre-commit
+
+install_doc: install_min
 	sudo apt-get install doxygen
+	pip install jinja2 Pygments
 
 setup:
-	pip install conan
+	pip install conan --user
 	conan user
 
 prepare:
 	rm -rf build
 	mkdir build
-	cd build && conan install .. && cd ..
 
-prepare_vcpkg:
+prepare_conan:
 	rm -rf build
 	mkdir build
-
-install_vcpkg_win:
-	vcpkg install --triplet x64-windows
-
-install_vcpkg_linux:
-	vcpkg install --triplet x64-linux
-
-install_vcpkg_mac:
-	vcpkg install --triplet x64-macos
-
-build_vcpkg:
-	cd build && cmake -S.. -B. -DUSE_CONAN=OFF -DCMAKE_TOOLCHAIN_FILE:STRING="/home/jan/cpp/vcpkg/scripts/buildsystems/vcpkg.cmake"
-	cd build && cmake --build .
+	cd build && conan install .. $(CONAN_FLAGS)

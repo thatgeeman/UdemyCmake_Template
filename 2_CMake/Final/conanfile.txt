@@ -1,6 +1,10 @@
 [requires]
-catch2/2.13.4
-cxxopts/2.2.1
+nlohmann_json/3.11.2
+fmt/9.1.0
+spdlog/1.11.0
+catch2/2.13.9
+cxxopts/3.0.0
 
 [generators]
-cmake
+cmake_find_package
+cmake_paths

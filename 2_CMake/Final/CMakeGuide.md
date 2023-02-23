@@ -54,7 +54,7 @@ If you have set some options in the CMakeLists, you can pass values in the comma
 
 ```bash
 cd build
-cmake -DMY_OPTION=[ON|OFF] .. 
+cmake -DMY_OPTION=[ON|OFF] ..
 ```
 
 ## Specify the Build Target (Option 1)
@@ -93,31 +93,24 @@ cd build
 ## Different Linking Types
 
 ```cmake
-add_library(A ...)
-add_library(B ...)
-add_library(C ...)
+target_link_libraries(A PUBLIC fmt)
+target_link_libraries(B PRIVATE spdlog)
+```
+
+```cmake
+target_link_libraries(C PUBLIC/PRIVATE A)
+target_link_libraries(C PUBLIC/PRIVATE B)
 ```
 
 ### PUBLIC
 
-```cmake
-target_link_libraries(A PUBLIC B)
-target_link_libraries(C PUBLIC A)
-```
-
-When A links in B as *PUBLIC*, it says that A uses B in its implementation, and B is also used in A's public API. Hence, C can use B since it is part of the public API of A.
+When A links fmt as *PUBLIC*, it says that A uses fmt in its implementation, and fmt is also used in A's public API.
+Hence, C can use fmt since it is part of the public API of A.
 
 ### PRIVATE
 
-```cmake
-target_link_libraries(A PRIVATE B)
-target_link_libraries(C PRIVATE A)
-```
-
-When A links in B as *PRIVATE*, it is saying that A uses B in its
-implementation, but B is not used in any part of A's public API. Any code
-that makes calls into A would not need to refer directly to anything from
-B.
+When B links spdlog as *PRIVATE*, it is saying that B uses spdlog in its
+implementation, but spdlog is not used in any part of B's public API.
 
 ### INTERFACE
 
